@@ -5,91 +5,89 @@ import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Fábrica de Carpas Chile | Carpas Corporativas para Eventos',
-  description: 'Somos la principal fábrica de carpas en Chile. Especialistas en carpas corporativas de alta resistencia, domos iglú y estructuras para marketing industrial con 25 años de experiencia.',
-  keywords: 'fabrica de carpas, carpas corporativas, carpas para eventos, carpas domo, carpas iglu, arriendo de carpas, carpas industriales chile',
+  metadataBase: new URL('https://fabricadecarpas.cl'),
+  title: 'Fábrica de Carpas Chile | 25 Años de Excelencia',
+  description: 'Fabricación de carpas estructurales tipo domo iglú para eventos corporativos y marketing en todo Chile. Despacho e instalación nacional.',
   alternates: {
     canonical: 'https://fabricadecarpas.cl',
   },
   openGraph: {
-    title: 'Fábrica de Carpas Chile | Carpas Corporativas Premium',
-    description: 'Estructuras de alta resistencia para eventos masivos y marketing corporativo en todo Chile. 25 años fabricando calidad.',
+    title: 'Fábrica de Carpas Chile | 25 Años de Excelencia',
+    description: 'Fabricación de carpas estructurales tipo domo iglú para eventos corporativos y marketing en todo Chile.',
     url: 'https://fabricadecarpas.cl',
     siteName: 'Fábrica de Carpas Chile',
     locale: 'es_CL',
     type: 'website',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Fábrica de Carpas Chile - Carpas Corporativas',
-      },
-    ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Fábrica de Carpas Chile | Carpas Corporativas',
-    description: 'Expertos en fabricación de carpas estructurales y domos para eventos corporativos en Chile.',
-    images: ['/og-image.png'],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   icons: {
     icon: '/icon.svg',
-    apple: '/icon.svg',
   },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Fábrica de Carpas Chile",
-    "image": "https://fabricadecarpas.cl/og-image.png",
-    "@id": "https://fabricadecarpas.cl",
-    "url": "https://fabricadecarpas.cl",
-    "telephone": "+56959192685",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Dirección de la Fábrica",
-      "addressLocality": "Santiago",
-      "addressRegion": "RM",
-      "postalCode": "000000",
-      "addressCountry": "CL"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -33.4489,
-      "longitude": -70.6693
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    "sameAs": [
-      "https://www.facebook.com/fabricadecarpas",
-      "https://www.instagram.com/fabricadecarpas"
-    ],
-    "description": "Líderes en fabricación de carpas corporativas y estructuras para eventos en Chile con más de 25 años de trayectoria."
-  }
-
   return (
     <html lang="es">
       <head>
-        <Script
-          id="schema-org"
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-TF3VC8BV');`}
+        </Script>
+        <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'Fábrica de Carpas Chile',
+              url: 'https://fabricadecarpas.cl',
+              telephone: '+56959192685',
+              description: 'Fabricación industrial de carpas estructurales tipo domo iglú para eventos corporativos y marketing en todo Chile con 25 años de experiencia.',
+              areaServed: {
+                '@type': 'Country',
+                name: 'Chile',
+              },
+              knowsAbout: [
+                'Carpas estructurales',
+                'Domos Iglú',
+                'Banderas Vela publicitarias',
+                'Rollers publicitarios',
+                'Roll-Up corporativos',
+                'Eventos corporativos',
+                'Activaciones de marketing',
+                'Estructuras de aluminio 6061-T6'
+              ],
+              address: {
+                '@type': 'PostalAddress',
+                addressCountry: 'CL',
+              },
+              priceRange: '$$$',
+            }),
+          }}
         />
       </head>
       <body className={inter.className} suppressHydrationWarning>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TF3VC8BV"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         {children}
       </body>
     </html>
