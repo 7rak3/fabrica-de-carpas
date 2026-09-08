@@ -258,7 +258,7 @@ export default function Home() {
               <div className="relative z-10">
                 <div className="mb-6 relative h-60 flex items-center justify-center rounded-2xl bg-white/[0.02] border border-white/5 p-4 overflow-hidden">
                   <img
-                    src="/Fotos%20productos/Carpas%20PAN/Carpas%20PAN%20Naranjo_nobg.png"
+                    src="/images/domo-cuadrado.webp"
                     alt="Carpa Domo Iglú Cuadrada Naranja"
                     className="max-h-full object-contain drop-shadow-[0_20px_25px_rgba(252,76,2,0.25)] group-hover:scale-105 transition-transform duration-500"
                   />
@@ -291,7 +291,7 @@ export default function Home() {
               <div className="relative z-10">
                 <div className="mb-6 relative h-60 flex items-center justify-center rounded-2xl bg-white/[0.02] border border-white/5 p-4 overflow-hidden">
                   <img
-                    src="/Fotos%20productos/Carpas%20Extendidas/Carpa%20Extendida%20Azul_nobg.png"
+                    src="/images/domo-rectangular.webp"
                     alt="Carpa Domo Iglú Rectangular Extendida"
                     className="max-h-full object-contain drop-shadow-[0_20px_25px_rgba(212,175,55,0.25)] group-hover:scale-105 transition-transform duration-500"
                   />
@@ -828,10 +828,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { t: "Evento Corporativo Santiago", s: "Domo 5x10", span: "md:col-span-2", img: "/Fotos%20productos/Carpas%20Extendidas/Carpa%20Extendida%20Azul.png" },
-              { t: "Activación Verano Viña", s: "Domo 4x4", span: "", img: "/Fotos%20productos/Carpas%20PAN/Carpas%20PAN%20Naranjo.png" },
-              { t: "Lanzamiento Automotriz", s: "Modular 5x20", span: "", img: "/Fotos%20productos/Carpas%20L/Carpa%20L%20Naranja.png" },
-              { t: "Stands de Marketing", s: "Domo 3x3", span: "md:col-span-2", img: "/Fotos%20productos/Carpas%20C/Carpa%20C%20Amarilla.png" }
+              { t: "Evento Corporativo Santiago", s: "Domo 5x10", span: "md:col-span-2", img: "/images/proyecto-1.webp" },
+              { t: "Activación Verano Viña", s: "Domo 4x4", span: "", img: "/images/proyecto-2.webp" },
+              { t: "Lanzamiento Automotriz", s: "Modular 5x20", span: "", img: "/images/proyecto-3.webp" },
+              { t: "Stands de Marketing", s: "Domo 3x3", span: "md:col-span-2", img: "/images/proyecto-4.webp" }
             ].map((p, i) => (
               <motion.div 
                 key={i} 
