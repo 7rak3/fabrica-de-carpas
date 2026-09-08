@@ -251,11 +251,18 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 gap-8">
             {/* Cuadrada */}
-            <motion.div {...fadeIn} className="bg-black border border-white/10 p-10 rounded-3xl hover:border-brand-orange/50 transition-all group relative overflow-hidden">
+            <motion.div {...fadeIn} className="bg-black border border-white/10 p-10 rounded-3xl hover:border-brand-orange/50 transition-all group relative overflow-hidden flex flex-col justify-between">
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                 <Maximize2 size={120} />
               </div>
               <div className="relative z-10">
+                <div className="mb-6 relative h-60 flex items-center justify-center rounded-2xl bg-white/[0.02] border border-white/5 p-4 overflow-hidden">
+                  <img
+                    src="/Fotos%20productos/Carpas%20PAN/Carpas%20PAN%20Naranjo_nobg.png"
+                    alt="Carpa Domo Iglú Cuadrada Naranja"
+                    className="max-h-full object-contain drop-shadow-[0_20px_25px_rgba(252,76,2,0.25)] group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
                 <h3 className="text-4xl font-black tracking-tighter uppercase mb-2">CUADRADA</h3>
                 <p className="text-brand-orange text-xs font-bold uppercase tracking-widest mb-8 italic">Domo Iglú Stand</p>
                 <div className="flex gap-4 mb-8">
@@ -268,6 +275,8 @@ export default function Home() {
                   <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-brand-orange" /> Estructura Aluminio 6061-T6</li>
                   <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-brand-orange" /> Montaje Express (20 min)</li>
                 </ul>
+              </div>
+              <div className="relative z-10">
                 <a href={`${WHATSAPP_URL}?text=Hola, me interesa cotizar el modelo de Carpa Domo Cuadrada.`} className="w-full py-5 bg-brand-orange/10 border border-brand-orange/30 rounded-xl flex items-center justify-center gap-3 font-black text-brand-orange hover:bg-brand-orange hover:text-white transition-all uppercase tracking-widest text-xs">
                   Cotizar por WhatsApp <MessageCircle size={20} />
                 </a>
@@ -275,11 +284,18 @@ export default function Home() {
             </motion.div>
 
             {/* Rectangular */}
-            <motion.div {...fadeIn} className="bg-black border border-white/10 p-10 rounded-3xl hover:border-brand-gold/50 transition-all group relative overflow-hidden">
+            <motion.div {...fadeIn} className="bg-black border border-white/10 p-10 rounded-3xl hover:border-brand-gold/50 transition-all group relative overflow-hidden flex flex-col justify-between">
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                 <Maximize2 size={120} />
               </div>
               <div className="relative z-10">
+                <div className="mb-6 relative h-60 flex items-center justify-center rounded-2xl bg-white/[0.02] border border-white/5 p-4 overflow-hidden">
+                  <img
+                    src="/Fotos%20productos/Carpas%20Extendidas/Carpa%20Extendida%20Azul_nobg.png"
+                    alt="Carpa Domo Iglú Rectangular Extendida"
+                    className="max-h-full object-contain drop-shadow-[0_20px_25px_rgba(212,175,55,0.25)] group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
                 <h3 className="text-4xl font-black tracking-tighter uppercase mb-2">RECTANGULAR</h3>
                 <p className="text-brand-gold text-xs font-bold uppercase tracking-widest mb-8 italic">Domo Iglú Event</p>
                 <div className="flex gap-4 mb-8">
@@ -292,6 +308,8 @@ export default function Home() {
                   <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-brand-gold" /> Sistema Modular Acoplable</li>
                   <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-brand-gold" /> Resistencia Viento Superior</li>
                 </ul>
+              </div>
+              <div className="relative z-10">
                 <a href={`${WHATSAPP_URL}?text=Hola, me interesa cotizar el modelo de Carpa Domo Rectangular.`} className="w-full py-5 bg-brand-gold/10 border border-brand-gold/30 rounded-xl flex items-center justify-center gap-3 font-black text-brand-gold hover:bg-brand-gold hover:text-black transition-all uppercase tracking-widest text-xs">
                   Cotizar por WhatsApp <MessageCircle size={20} />
                 </a>
@@ -810,20 +828,22 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { t: "Evento Corporativo Santiago", s: "Domo 5x10", span: "md:col-span-2" },
-              { t: "Activación Verano Viña", s: "Domo 4x4", span: "" },
-              { t: "Lanzamiento Automotriz", s: "Modular 5x20", span: "" },
-              { t: "Stands de Marketing", s: "Domo 3x3", span: "md:col-span-2" }
+              { t: "Evento Corporativo Santiago", s: "Domo 5x10", span: "md:col-span-2", img: "/Fotos%20productos/Carpas%20Extendidas/Carpa%20Extendida%20Azul.png" },
+              { t: "Activación Verano Viña", s: "Domo 4x4", span: "", img: "/Fotos%20productos/Carpas%20PAN/Carpas%20PAN%20Naranjo.png" },
+              { t: "Lanzamiento Automotriz", s: "Modular 5x20", span: "", img: "/Fotos%20productos/Carpas%20L/Carpa%20L%20Naranja.png" },
+              { t: "Stands de Marketing", s: "Domo 3x3", span: "md:col-span-2", img: "/Fotos%20productos/Carpas%20C/Carpa%20C%20Amarilla.png" }
             ].map((p, i) => (
               <motion.div 
                 key={i} 
                 {...fadeIn} 
                 className={`${p.span} group relative aspect-video md:aspect-auto md:h-[400px] overflow-hidden rounded-3xl bg-white/5 border border-white/10`}
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity">
-                  <Layers size={100} className="text-brand-orange" />
-                </div>
+                <img
+                  src={p.img}
+                  alt={p.t}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-85"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
                 <div className="absolute bottom-0 left-0 p-8 z-20">
                   <span className="text-[10px] font-black text-brand-orange uppercase tracking-[0.3em]">{p.s}</span>
                   <h4 className="text-xl font-black text-white uppercase tracking-tighter mt-2">{p.t}</h4>
