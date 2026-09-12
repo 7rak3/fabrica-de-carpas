@@ -161,16 +161,15 @@ function ProposalViewerInner({ proposal }: ProposalViewerProps) {
 
             {/* Logos de Cabecera */}
             <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-brand-orange rounded-lg flex items-center justify-center">
-                  <Layers className="text-white" size={18} />
-                </div>
-                <div>
-                  <div className="text-xs font-black tracking-tight leading-tight">
-                    FÁBRICA<span className="text-brand-orange">DE</span>CARPAS
-                  </div>
-                  <div className="text-[9px] text-gray-500 uppercase tracking-widest font-semibold">Chile</div>
-                </div>
+              <div className="flex items-center">
+                <Image
+                  src="/images/logo-fabrica-de-carpas-blanco.webp"
+                  alt="Fábrica de Carpas"
+                  width={150}
+                  height={26}
+                  className="h-6 sm:h-7 w-auto object-contain"
+                  priority
+                />
               </div>
 
               <div className="h-6 w-px bg-white/10" />
@@ -345,16 +344,15 @@ function ProposalViewerInner({ proposal }: ProposalViewerProps) {
       <nav className="sticky top-0 z-50 bg-[#080808]/90 backdrop-blur-xl border-b border-white/10 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto h-20 flex items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-9 h-9 bg-brand-orange rounded-lg flex items-center justify-center shadow-lg shadow-brand-orange/30">
-                <Layers className="text-white" size={20} />
-              </div>
-              <div className="hidden sm:block">
-                <div className="font-black text-sm uppercase tracking-tighter">
-                  FABRICA<span className="text-brand-orange">DE</span>CARPAS
-                </div>
-                <div className="text-[9px] text-gray-400 uppercase tracking-widest">Portal de Propuestas</div>
-              </div>
+            <div className="flex items-center">
+              <Image
+                src="/images/logo-fabrica-de-carpas-blanco.webp"
+                alt="Fábrica de Carpas Chile"
+                width={190}
+                height={32}
+                className="h-7 sm:h-8 w-auto object-contain"
+                priority
+              />
             </div>
 
             <div className="h-6 w-px bg-white/10 hidden md:block" />
@@ -904,13 +902,13 @@ function ProposalViewerInner({ proposal }: ProposalViewerProps) {
       <footer className="mt-16 pt-12 border-t border-white/10 px-4 sm:px-8 max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-gray-500">
           <div className="flex items-center gap-3">
-            <div className="w-7 h-7 bg-brand-orange rounded-md flex items-center justify-center">
-              <Layers size={16} className="text-white" />
-            </div>
-            <div>
-              <span className="font-black text-white tracking-wider uppercase">FÁBRICA DE CARPAS CHILE</span>
-              <span className="text-gray-600 block text-[10px]">Marca del Grupo Agencia Cohete .CL</span>
-            </div>
+            <Image
+              src="/images/logo-fabrica-de-carpas-blanco.webp"
+              alt="Fábrica de Carpas Chile"
+              width={160}
+              height={28}
+              className="h-7 w-auto object-contain"
+            />
           </div>
 
           <div className="text-center sm:text-right">

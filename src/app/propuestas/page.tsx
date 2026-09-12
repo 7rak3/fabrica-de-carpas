@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Layers, Key, ArrowRight, ShieldCheck, MessageCircle, AlertCircle } from 'lucide-react';
 import { PROPOSALS } from '@/data/proposals';
@@ -72,16 +73,15 @@ export default function ProposalsPortalPage() {
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange via-brand-gold to-brand-orange" />
 
           {/* Logo Fábrica de Carpas */}
-          <div className="flex items-center justify-center gap-2.5 mb-6">
-            <div className="w-10 h-10 bg-brand-orange rounded-xl flex items-center justify-center shadow-lg shadow-brand-orange/20">
-              <Layers className="text-white" size={22} />
-            </div>
-            <div>
-              <div className="text-base font-black tracking-tight leading-tight uppercase">
-                FÁBRICA<span className="text-brand-orange">DE</span>CARPAS
-              </div>
-              <div className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Chile • 25 Años</div>
-            </div>
+          <div className="flex items-center justify-center mb-6">
+            <Image
+              src="/images/logo-fabrica-de-carpas-blanco.webp"
+              alt="Fábrica de Carpas Chile"
+              width={200}
+              height={36}
+              className="h-8 sm:h-9 w-auto object-contain"
+              priority
+            />
           </div>
 
           <div className="text-center mb-8">

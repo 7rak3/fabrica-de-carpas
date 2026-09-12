@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { MessageCircle, Maximize2, Layers, CheckCircle2, ArrowUpRight, Instagram, Facebook, Linkedin, Youtube, Users, Sliders, ShieldCheck, Sparkles, Check, Flag, Printer } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -143,12 +145,16 @@ export default function Home() {
       {/* Header */}
       <nav className="fixed top-0 w-full z-[100] bg-brand-dark/80 backdrop-blur-xl border-b border-white/5 px-6">
         <div className="max-w-7xl mx-auto h-20 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-brand-orange rounded flex items-center justify-center">
-              <Layers className="text-white" size={20} />
-            </div>
-            <span className="font-black text-lg tracking-tighter uppercase">FABRICA<span className="text-brand-orange">DE</span>CARPAS</span>
-          </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo-fabrica-de-carpas-blanco.webp"
+              alt="Fábrica de Carpas Chile"
+              width={210}
+              height={36}
+              className="h-8 md:h-9 w-auto object-contain"
+              priority
+            />
+          </Link>
           
           <div className="hidden lg:flex gap-8">
             {navLinks.map((link) => (
@@ -1003,11 +1009,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20 text-center md:text-left">
             <div className="md:col-span-2">
-              <div className="flex items-center justify-center md:justify-start gap-3 mb-8">
-                <div className="w-10 h-10 bg-brand-orange rounded flex items-center justify-center">
-                  <Layers className="text-white" size={22} />
-                </div>
-                <span className="font-black text-xl tracking-tighter uppercase">FABRICA<span className="text-brand-orange">DE</span>CARPAS</span>
+              <div className="flex items-center justify-center md:justify-start mb-8">
+                <Image
+                  src="/images/logo-fabrica-de-carpas-blanco.webp"
+                  alt="Fábrica de Carpas Chile"
+                  width={220}
+                  height={38}
+                  className="h-9 w-auto object-contain"
+                />
               </div>
               <p className="text-gray-600 text-sm max-w-sm mx-auto md:mx-0 leading-relaxed font-medium mb-3">
                 Líderes en la fabricación de estructuras premium para eventos en Chile. Más de 25 años entregando soluciones industriales de alta resistencia para las mejores agencias del país.
