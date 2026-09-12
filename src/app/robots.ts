@@ -8,10 +8,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
+        disallow: '/propuestas/',
       },
       {
         userAgent: ['GPTBot', 'OAI-SearchBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended', 'Bytespider'],
         allow: '/',
+        disallow: '/propuestas/',
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
