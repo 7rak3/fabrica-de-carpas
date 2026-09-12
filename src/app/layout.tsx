@@ -31,7 +31,12 @@ export const metadata = {
     },
   },
   icons: {
-    icon: '/icon.svg',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    apple: '/apple-icon.png',
   },
 }
 

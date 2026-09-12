@@ -6,24 +6,50 @@
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  # Servir archivos estáticos si existen
-  RewriteCond %{REQUEST_FILENAME} -f [OR]
-  RewriteCond %{REQUEST_FILENAME} -d
+  # Servir archivos estáticos reales directamente
+  RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]
 
-  # Si no existe archivo con extensión, buscar versión .html
+  # Si existe el archivo .html correspondiente en la raíz o subcarpetas
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^(.*)/?$ $1.html [L]
+
+  # Si existe como archivo.html relativo
   RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.*)$ $1.html [L]
+  RewriteRule ^(.*)/?$ $1.html [L]
+
+  # Si existe directorio con index.html
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.*)/?$ $1/index.html [L]
 
   # Página 404 personalizada
   ErrorDocument 404 /404.html
 </IfModule>
 
-# Cache para assets estáticos
+# Tipos MIME necesarios para servidores cPanel
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/x-icon .ico
+  AddType image/svg+xml .svg
+  AddType application/pdf .pdf
+</IfModule>
+
+# Compresión Gzip / Deflate para carga rápida en cPanel
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Políticas de expiración y caché de assets
 <IfModule mod_expires.c>
   ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/pdf "access plus 1 month"
 </IfModule>
